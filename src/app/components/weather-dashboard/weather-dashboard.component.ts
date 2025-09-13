@@ -6,6 +6,7 @@ import { UnitToggleComponent } from '../unit-toggle/unit-toggle.component';
 import { WeatherDetailsComponent } from '../weather-details/weather-details.component';
 import { Weather } from '../../services/weather';
 import { WeatherTableComponent } from '../weather-table/weather-table.component';
+import { CITIES_URL, CITY_DATA_URL } from '../../urlconfig';
 
 @Component({
   selector: 'app-weather-dashboard',
@@ -31,7 +32,7 @@ export class WeatherDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.weatherService.getWeather('http://localhost:9000/cities.json').subscribe(data => {
+    this.weatherService.getWeather(CITIES_URL).subscribe(data => {
       this.cities = data.map((city: any) => city.name);
       // Pick 3 random unique cities for favourites and remove them from cities
       const shuffled = [...this.cities].sort(() => 0.5 - Math.random());
@@ -49,7 +50,7 @@ export class WeatherDashboardComponent implements OnInit {
 
   getWeatherDetails() {
     const cityFile = this.selectedCity.replace(/\s+/g, '_');
-    this.weatherService.getWeather(`http://localhost:9000/city/${cityFile}.json`).subscribe(data => {
+    this.weatherService.getWeather(`${CITY_DATA_URL}${cityFile}.json`).subscribe(data => {
       this.generateWeatherDetails(data);
       // Process and update weatherDetails based on fetched data
     });
