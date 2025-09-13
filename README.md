@@ -57,3 +57,30 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Cities and Weather Data Setup
+
+In the assets folder 
+First delete cities.json and city folder inside weather_data folder if already available. (Imp Do not touch cors_server.py)
+Next
+**Generate Test Data**
+   - On macOS/Linux, run:
+     ```sh
+     ./setup_data.sh
+     ```
+   - On Windows, run:
+     ```powershell
+     ./setup_data.ps1
+     ```
+   This will create a `weather_data` directory with all required JSON files.
+
+**Start the Data Server**
+   - On macOS/Linux, run:
+     ```sh
+     ./start_server.sh
+     ```
+   - On Windows, run:
+     ```powershell
+     ./start_server.ps1
+     ```
+This will setup the city folder and cities.json file and The data will be available at `http://localhost:9000/`.
