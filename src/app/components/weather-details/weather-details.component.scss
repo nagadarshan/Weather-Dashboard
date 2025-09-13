@@ -1,0 +1,76 @@
+.weather-details {
+  margin: 0% 9% 0% 9%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  padding-top: 2vh;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #23272e rgb(34,39,44);
+}
+
+.weather-details::-webkit-scrollbar {
+  width: 8px;
+  background: rgb(34,39,44);
+}
+.weather-details::-webkit-scrollbar-thumb {
+  background: #23272e;
+  border-radius: 4px;
+}
+.detail-card {
+  cursor: pointer;
+  margin-left: 3vh;
+  // margin-top: 3vh;
+  border-radius: 10px;
+  width: 18vh;
+  height: 10vh;
+  border: 1px solid #728fce30;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.detail-card.current-date {
+  background: linear-gradient(135deg, #3a4a6b 80%, #728fce60 100%);
+  box-shadow: 0 4px 18px 0 rgba(80,120,200,0.18);
+  border: 2px solid #6ea8fe;
+  color: #fff;
+}
+.detail-card-top {
+  height: 40%;
+  display: flex;
+  justify-content: start;
+  padding-left: 10%;
+  align-items: center;
+  background-color: #728fce30;
+  color: white;
+  border-radius: 9px 9px 0px 0px;
+  gap: 12px;
+}
+
+.today-label {
+  margin-left: auto;
+  color: #ffb347;
+  font-weight: 600;
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  padding-right: 10px;
+}
+.detail-card-bottom {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.3em;
+}
+
+.temp-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 0.4em;
+  color: #b0c4de; /* matches a subtle background accent */
+}
+.nwf-text {
+  color: white;
+  font-size: large;
+  font-weight: 600;
+  margin: 2% 9% 0% 9%;
+}

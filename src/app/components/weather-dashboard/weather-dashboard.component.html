@@ -1,0 +1,19 @@
+<app-header [cities]="cities" [selectedCity]="selectedCity" [favourites]="favourites" (cityChange)="onCityChange($event)"></app-header>
+<div class="weather-dashboard">
+    <div class="city">
+        <div>
+            {{selectedCity}}
+        </div>
+        <div>
+            <app-unit-toggle></app-unit-toggle>
+        </div>
+    </div>
+    <div class="day-cards">
+        <app-weather-day-card [selectedDateDetail]="selectedDateDetail"></app-weather-day-card>
+    </div>
+    <div>
+        <app-weather-details [weatherDetails]="weatherDetails" (selectedDateDetail)="onSelectedDate($event)"></app-weather-details>
+    </div>
+</div>
+<app-date-range-filter [selectedForcast]="selectedForcast" (rangeChange)="onRangeChange($event)"></app-date-range-filter>
+<app-weather-table [tableData]="weatherTableData"></app-weather-table>

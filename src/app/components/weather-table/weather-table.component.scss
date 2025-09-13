@@ -1,0 +1,28 @@
+.weather-table {
+    width: 75%;
+    margin: 1% auto auto auto;
+    border-collapse: collapse;
+    background: transparent;
+    color: white;
+}
+
+.weather-table th,
+.weather-table td {
+    border: none;
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+.weather-table thead tr {
+    background: transparent;
+}
+
+.weather-table .odd-row {
+    background: #232a36;
+    color: #e0e6ef;
+}
+
+.weather-table .even-row {
+    background: #1a202b;
+    color: #e0e6ef;
+}

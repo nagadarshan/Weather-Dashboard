@@ -1,0 +1,117 @@
+.air-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de;
+  font-size: 1.1em;
+  // margin-right: 0.4em;
+}
+.air-quality-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de;
+  font-size: 1.1em;
+  // margin-right: 0.4em;
+}
+.air-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de;
+  font-size: 1.1em;
+  // margin-right: 0.4em;
+}
+.rain-drop-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de;
+  font-size: 1.1em;
+  // margin-right: 0.4em;
+}
+.rain-icon {
+  display: flex;
+  align-items: center;
+  color: #6ea8fe;
+  font-size: 1.1em;
+  // margin-right: 0.4em;
+}
+.wind-direction-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de;
+  font-size: 1.1em;
+  // margin-right: 0.4em;
+}
+.wind-speed-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de;
+  font-size: 1.1em;
+  // margin-right: 0.4em;
+}
+.weather-day-card {
+  // Add weather day card styles here
+  height: 12vh;
+}
+
+.main-card {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0% 9% 0% 9%;
+  background-color: #728fce30;
+  border-radius: 10px;
+}
+.left-side-card {
+  padding-left: 2%;
+  color: white;
+}
+.temp-main-display {
+  font-size: xx-large;
+}
+.right-side-card {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 50%;
+}
+.right-side-chips {
+  height: 49%;
+  width: 33%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: white;
+  font-size: large;
+}
+
+.temp-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de; /* subtle accent to match background */
+  font-size: 1.1em;
+}
+.humidity-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de; /* subtle accent to match background */
+  font-size: 1.1em;
+}
+.wind-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de; /* subtle accent to match background */
+  font-size: 1.1em;
+}
+.visibility-icon {
+  display: flex;
+  align-items: center;
+  color: #b0c4de; /* subtle accent to match background */
+  font-size: 1.1em;
+}
+.chip-label {
+  font-size: small;
+}
+.chip-value {
+  margin-left: 5px;
+  font-size: medium;
+}

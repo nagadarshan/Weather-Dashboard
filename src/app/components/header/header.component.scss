@@ -1,0 +1,100 @@
+.app-header {
+  width: 100vw;
+  height: 8vh;
+  background: rgb(34 39 44);
+  display: flex;
+  padding-left: 2vh;
+  align-items: center;
+  font-size: large;
+  color: white;
+  justify-content: space-between;
+}
+
+// Custom dropdown styles
+.custom-dropdown {
+  position: relative;
+  width: 160px;
+  margin-right: 2vw;
+  outline: none;
+}
+.dropdown-selected {
+  background: rgb(26, 28, 30);
+  color: white;
+  border: 1px solid rgb(28, 30, 32);
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: medium;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dropdown-arrow {
+  margin-left: 8px;
+  font-size: 0.8em;
+}
+.dropdown-list {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  background: rgb(34, 39, 44);
+  border: 1px solid rgb(28, 30, 32);
+  border-radius: 4px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  scrollbar-width: thin;
+  scrollbar-color: #222 rgb(34,39,44);
+}
+.dropdown-list::-webkit-scrollbar {
+  width: 8px;
+  background: rgb(34,39,44);
+}
+.dropdown-list::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+.dropdown-option {
+  padding: 8px 12px;
+  color: #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dropdown-option:hover {
+  background: rgba(255,255,255,0.08);
+}
+.custom-dropdown.open .dropdown-list {
+  display: block;
+}
+.city-selection {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.custom-chip-set {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.custom-chip {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 12px;
+  height: 32px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  user-select: none;
+}
+.custom-chip:hover {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.16);
+}

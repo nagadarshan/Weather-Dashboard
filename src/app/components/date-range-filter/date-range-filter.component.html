@@ -1,0 +1,33 @@
+<div class="date-range-filter custom-date-range">
+    <div class="filter-title">
+        Historical Data
+    </div>
+    <div class="date-range-controls">
+        <div class="custom-chip-set" aria-label="Quick selection">
+            <div class="custom-chip" (click)="onPastWeekClick()" [ngClass]="{'active': selectedForcast === 'pastWeek'}">
+                Past Week</div>
+            <div class="custom-chip" (click)="onNextWeekClick()" [ngClass]="{'active': selectedForcast === 'nextWeek'}">
+                Next Week</div>
+            <div class="custom-chip" (click)="onFullMonthClick()"
+                [ngClass]="{'active': selectedForcast === 'fullMonth'}">Full Month</div>
+            <div class="custom-chip" (click)="onNext14DayClick()"
+                [ngClass]="{'active': selectedForcast === 'next14Days'}">Next 14 Days</div>
+        </div>
+        <div class="custom-date-picker">
+            <button class="date-range-btn" (click)="showPicker = !showPicker" [ngClass]="{'active': selectedForcast === 'custom'}">
+                {{ getDateString(tempRange?.start) || 'Start' }} to {{ getDateString(tempRange?.end) || 'End' }}
+            </button>
+            <div class="date-range-panel" *ngIf="showPicker">
+                <label for="start-date" class="date-label">Start:</label>
+                <input id="start-date" class="custom-date-input" type="date" [value]="getDateString(tempRange.start)"
+                    [min]="getDateString(minDate)" [max]="getDateString(today)" (change)="onStartDateChange($event)" />
+                <span class="date-separator">to</span>
+                <label for="end-date" class="date-label">End:</label>
+                <input id="end-date" class="custom-date-input" type="date" [value]="getDateString(tempRange.end)"
+                    [min]="today" [max]="getDateString(maxDate)" (change)="onEndDateChange($event)" />
+                <button class="apply-btn" (click)="applyRange()">Apply</button>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { WeatherDashboardComponent } from './components/weather-dashboard/weather-dashboard.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [WeatherDashboardComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

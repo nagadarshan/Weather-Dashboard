@@ -1,0 +1,14 @@
+<div class="city-selector">
+    <!-- <select [value]="selectedCity" (change)="onCityChange($event)">
+    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+  </select> -->
+    <div class="custom-chip-set" aria-label="Favourite cities">
+        <div class="custom-chip" *ngFor="let fav of favourites" (click)="selectFavourite(fav)">{{fav}}</div>
+    </div>
+    <mat-form-field>
+        <mat-label>Select the city</mat-label>
+        <mat-select [(value)]="selectedCity" (selectionChange)="onCityChange($event)">
+            <mat-option *ngFor="let fav of favourites" value="{{fav}}">{{fav}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

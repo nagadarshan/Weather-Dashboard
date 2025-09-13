@@ -1,0 +1,17 @@
+<header class="app-header">
+    <span>Weather Forcast</span>
+    <div class="city-selection">
+        <div class="custom-chip-set" aria-label="Favourite cities">
+            <div class="custom-chip" *ngFor="let fav of favourites" (click)="selectFavourite(fav)">{{fav}}</div>
+        </div>
+        <div class="custom-dropdown" tabindex="0" [class.open]="dropdownOpen" (blur)="dropdownOpen=false">
+            <div class="dropdown-selected" (click)="dropdownOpen=!dropdownOpen">
+                {{ 'Select City' }}
+                <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="dropdown-list" *ngIf="dropdownOpen">
+                <div class="dropdown-option" *ngFor="let city of cities" (click)="selectCity(city)">{{city}}</div>
+            </div>
+        </div>
+    </div>
+</header>

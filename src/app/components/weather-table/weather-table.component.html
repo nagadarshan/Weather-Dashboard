@@ -1,0 +1,83 @@
+<table class="weather-table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>
+                <span class="temp-icon" aria-label="Temperature">
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"
+                        style="vertical-align:middle;">
+                        <path
+                            d="M15 17.25V7a3 3 0 10-6 0v10.25a4.5 4.5 0 106 0zM12 22a2.5 2.5 0 01-1-4.8V13a1 1 0 112 0v4.2A2.5 2.5 0 0112 22z" />
+                    </svg>
+                </span>
+                Max Temp
+            </th>
+            <th>
+                <span class="temp-icon" aria-label="Temperature">
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"
+                        style="vertical-align:middle;">
+                        <path
+                            d="M15 17.25V7a3 3 0 10-6 0v10.25a4.5 4.5 0 106 0zM12 22a2.5 2.5 0 01-1-4.8V13a1 1 0 112 0v4.2A2.5 2.5 0 0112 22z" />
+                    </svg>
+                </span>
+                Min Temp
+            </th>
+            <th>
+                <span class="rain-drop-icon" aria-label="Rain Percentage">
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"
+                        style="vertical-align:middle;">
+                        <path
+                            d="M12 2C12.28 2 12.53 2.11 12.71 2.29C13.09 2.68 19 8.61 19 14C19 17.87 15.87 21 12 21C8.13 21 5 17.87 5 14C5 8.61 10.91 2.68 11.29 2.29C11.47 2.11 11.72 2 12 2ZM12 20c3.31 0 6-2.69 6-6 0-4.08-4.5-8.36-6-9.82C10.5 5.64 6 9.92 6 14c0 3.31 2.69 6 6 6z" />
+                    </svg>
+                </span>
+                Rain %
+            </th>
+            <th>
+                <span class="wind-direction-icon" aria-label="Wind Direction">
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"
+                        style="vertical-align:middle;">
+                        <path d="M12 2v20m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                    </svg>
+                </span>
+                Wind Dir
+            </th>
+            <th>
+                <span class="wind-speed-icon" aria-label="Wind Speed">
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"
+                        style="vertical-align:middle;">
+                        <path
+                            d="M4 12a1 1 0 0 1 0-2h13a3 3 0 1 1 0 6H6a1 1 0 1 1 0-2h11a1 1 0 1 0 0-2H4zm2-5a1 1 0 1 1 0-2h9a5 5 0 1 1 0 10H7a1 1 0 1 1 0-2h8a3 3 0 1 0 0-6H6zm-2 10a1 1 0 1 1 0-2h10a1 1 0 1 1 0 2H4z" />
+                    </svg>
+                </span>
+                Wind Speed
+            </th>
+            <th>
+                <span class="air-icon" aria-label="Air">
+                    <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;">
+                        <path d="M3 12h13a3 3 0 1 1 0 6H7" stroke="#b0c4de" stroke-width="2" stroke-linecap="round" />
+                        <path d="M3 6h9a2 2 0 1 1 0 4H5" stroke="#b0c4de" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </span>
+                Air Quality
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of tableData; let i = index" [ngClass]="{'odd-row': i % 2 === 1, 'even-row': i % 2 === 0}">
+            <td>{{ row.date }}</td>
+            <td>
+                <span *ngIf="selectedUnit == 'C'">{{ row.max_temp }}°C</span>
+                <span *ngIf="selectedUnit == 'F'">{{( row.max_temp * (9/5) + 32) | number : '1.2-2'}}°F</span>
+            </td>
+            <td>
+                <span *ngIf="selectedUnit == 'C'">{{ row.min_temp }}°C</span>
+                <span *ngIf="selectedUnit == 'F'">{{( row.max_temp * (9/5) + 32) | number : '1.2-2'}}°F</span>
+            </td>
+            <td>{{ row.rain_pct }}%</td>
+            <td>{{ row.wind_dir }}</td>
+            <td>{{ row.wind_speed }}</td>
+            <td>{{ row.air_quality}}</td>
+        </tr>
+    </tbody>
+</table>
